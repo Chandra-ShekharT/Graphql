@@ -1,0 +1,21 @@
+Steps to add graphQl in your springboot project: -
+
+Step 1: Set up a Spring Boot project
+Step 2: Add dependencies of graphQL i.e. <dependency>
+                                         			<groupId>org.springframework.graphql</groupId>
+                                         			<artifactId>spring-graphql-test</artifactId>
+                                         			<scope>test</scope>
+
+
+Step 3:Create GraphQL schema
+Step 4:Configure GraphQL endpoint i.e. your controller.
+--------------------------------------------------------------
+Let's understand BookController that handles GraphQL queries and mutations for a Book entity.
+@MutationMapping("createBook") annotation defines a GraphQL mutation operation named createBook.
+It maps the corresponding HTTP POST request to this method.
+The method takes a BookInput object as an argument, which represents the input data for creating a book.
+It creates a Book object from the input and delegates the creation process to the BookService class.
+
+The @QueryMapping("allBooks") annotation defines a GraphQL query operation named allBooks.
+It maps the corresponding HTTP GET request to this method.
+It retrieves all books by invoking the getAll() method from the BookService class.
